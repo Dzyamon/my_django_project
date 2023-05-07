@@ -1,10 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from myapp1.models import Worker
+
 
 def index_page(request):
     return render(request, 'index.html')
 
 def index(request):
+    # new_worker = Worker(name='Хр', second_name='Морж', salary=100)
+    # new_worker.save()
+    # #v2
+    # Worker.objects.create(name='Хр', second_name='Морж', salary=101)
+
+    # worker_to_change = Worker.objects.get(id=5)
+    # worker_to_change.second_name = 'Дрищ'
+    # worker_to_change.save()
+    # #v2
+    # Worker.objects.filter(id=5).update(name='Уася')
+
+    # Worker.objects.get(id=6).delete()
+    #
+    # all_workers = Worker.objects.all()
+    # workers_filter = Worker.objects.filter(salary=222)
+
+    # for i in all_workers:
+    #     print(i)
     return HttpResponse("<h2>Главная</h2>")
 
 def index2(request):
