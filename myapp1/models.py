@@ -12,5 +12,5 @@ class Worker(models.Model):
 # python manage.py createsuperuser
 # dzyamon 123
 
-    def __str__(self):
-        return f'{self.second_name} {self.name}'
+    # def __str__(self):
+    #     return f'{self.second_name} {self.name}'

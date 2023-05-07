@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<b>
     <h1>Hello 1</h1>
+    {% for i in data %}
+        <h2>Чел {{ forloop.counter }}</h2>
+        Фамилия: {{ i.second_name }}
+        Имя: {{ i.name }}
+        ЗП:
+        {% if i.salary > 150 %}
+            <b style="color:green"> {{ i.salary }}</b>
+        {% else %}
+            <b style="color:red"> {{ i.salary }}</b>
+        {% endif %}
+        <br>
+    {% endfor %}
 </body>
 </html>

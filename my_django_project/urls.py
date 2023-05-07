@@ -31,6 +31,7 @@ urlpatterns = [
     re_path(r'^about/contact', views.contact),
     re_path(r'^about', views.about, kwargs={"name":"Tom", "age": 38}),
     path('', views.index, name='home'),
+    path('index1', views.index1),
     path('index2', views.index2),
     path('index3', views.index3),
     path("user", views.user),

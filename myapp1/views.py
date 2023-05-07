@@ -3,9 +3,6 @@ from django.http import HttpResponse, JsonResponse
 from myapp1.models import Worker
 
 
-def index_page(request):
-    return render(request, 'index.html')
-
 def index(request):
     # new_worker = Worker(name='Хр', second_name='Морж', salary=100)
     # new_worker.save()
@@ -26,6 +23,10 @@ def index(request):
     # for i in all_workers:
     #     print(i)
     return HttpResponse("<h2>Главная</h2>")
+
+def index1(request):
+    all_workers = Worker.objects.all()
+    return render(request, 'index.html', {'data': all_workers})
 
 def index2(request):
     host = request.META["HTTP_HOST"]  # получаем адрес сервера
